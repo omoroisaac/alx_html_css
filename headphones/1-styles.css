@@ -1,0 +1,61 @@
+/* Import the icon font stylesheet */
+@import url('holberton_school-icon/style.css');
+
+.what-we-do {
+  padding: 4rem 1rem;
+  text-align: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #666;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature {
+  flex: 1 1 250px;
+  padding: 1.5rem;
+}
+
+.feature__icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.feature__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.feature__desc {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+@media (max-width: 480px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+}
