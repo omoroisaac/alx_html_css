@@ -40,5 +40,5 @@ The design includes optimized assets for:
 
 1. **Clone this repository**  
    ```bash
-   git clone https://github.com/your-username/headphones-landing-page.git
+   git clone https://github.com/omoroisaac/alx_html_css.git
    cd headphones-landing-page
