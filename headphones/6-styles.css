@@ -1,0 +1,106 @@
+/* Ensure variables exist (adjust if you already have them) */
+:root{
+  --primary-color: #FF6565;
+  --max-width: 1000px;
+  --text-color: #222;
+  --muted: #666;
+  --gap: 2rem;
+  --pentagon-size: 120px; /* base size, will scale on mobile */
+}
+
+/* Section container */
+.our-results {
+  background-color: #f9f9f9;
+  padding: 4rem 1rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.our-results .container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Titles */
+.section-title { font-size: 2rem; font-weight: 700; }
+.section-subtitle {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Reusable features grid */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap);
+  margin-top: 2.5rem;
+}
+
+.feature {
+  flex: 1 1 220px; /* grow, shrink, basis */
+  max-width: 260px;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Pentagon wrapper (creates the clipped shape) */
+.result__pentagon {
+  --size: var(--pentagon-size);
+  width: var(--size);
+  height: var(--size);
+  margin: 0 auto 1rem auto;
+  display: grid;
+  place-items: center;
+  /* pentagon polygon - points approximately for a regular-ish pentagon */
+  -webkit-clip-path: polygon(50% 0%, 95% 35%, 77% 95%, 23% 95%, 5% 35%);
+  clip-path: polygon(50% 0%, 95% 35%, 77% 95%, 23% 95%, 5% 35%);
+  background: linear-gradient(135deg, rgba(255,101,101,0.98), rgba(255,101,101,0.8));
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  position: relative;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+/* subtle hover/keyboard focus lift (non-intrusive) */
+.feature:focus-within .result__pentagon,
+.feature:hover .result__pentagon {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+}
+
+/* number inside the pentagon */
+.result__value {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  font-family: 'Source Sans Pro', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  padding: 0.25rem 0.35rem;
+  transform: translateY(1%); /* tiny visual nudge to center inside shape */
+}
+
+/* Titles & description reuse */
+.feature__title { font-size: 1.05rem; margin-top: 0.5rem; font-weight: 600; }
+.feature__desc { margin-top: .5rem; color: var(--muted); font-size: 0.95rem; }
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .feature { flex: 1 1 200px; max-width: 220px; }
+  :root { --pentagon-size: 100px; }
+}
+
+@media (max-width: 480px) {
+  .features {
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: center;
+  }
+  :root { --pentagon-size: 90px; }
+  .feature { max-width: 320px; padding: 0.75rem; }
+  .section-title { font-size: 1.5rem; }
+  .section-subtitle { font-size: 0.95rem; }
+}
