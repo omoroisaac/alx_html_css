@@ -1,0 +1,108 @@
+/* = Header styles */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px; /* adjust from Figma: top/bottom 20px, left/right 40px */
+  background-color: #ffffff; /* or whatever background color Figma uses */
+  /* maybe add box-shadow or border-bottom if in design */
+  border-bottom: 1px solid #e0e0e0;
+}
+
+header a.logo-link img {
+  height: 40px; /* adjust to match logo height in Figma */
+  width: auto;
+}
+
+header nav {
+  display: flex;
+  gap: 30px; /* space between nav links, adjust per Figma */
+}
+
+header nav a {
+  text-decoration: none;
+  font-size: 16px; /* adjust */
+  color: #333333; /* main nav link color */
+  font-weight: 500;
+}
+
+header nav a:hover {
+  color: #ff0000; /* or accent color from design */
+}
+
+/* = Banner / First Section */
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 40px; /* top-bottom, left-right; adjust per Figma */
+  background-color: #f7f7f7; /* or whatever bg */
+}
+
+.banner .banner-block {
+  flex: 1;
+}
+
+.banner .banner-block:first-child {
+  /* Left block (title / text / button) */
+  max-width: 45%; /* or some width so left block doesn’t stretch too wide */
+}
+
+.banner .banner-block:first-child h1 {
+  font-size: 48px; /* adjust per Figma */
+  line-height: 1.2;
+  color: #222222;
+  margin-bottom: 20px;
+}
+
+.banner .banner-block:first-child p {
+  font-size: 18px;
+  color: #555555;
+  margin-bottom: 30px;
+}
+
+.banner .banner-block:first-child button {
+  padding: 15px 30px; /* vertical horizontal */
+  font-size: 16px;
+  background-color: #ff6347; /* main accent / call-to-action color */
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.banner .banner-block:first-child button:hover {
+  background-color: #e5533f; /* darker / hover variant */
+}
+
+.banner .banner-block:last-child {
+  /* Right block (features grid) */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* spacing between feature items */
+  max-width: 50%;
+}
+
+.banner .feature {
+  flex: 1 1 calc(50% - 20px); /* two per row maybe */
+  text-align: center;
+}
+
+.banner .feature img {
+  width: 80px; /* adjust to the Figma icon size */
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.banner .feature h3 {
+  font-size: 20px;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.banner .feature p {
+  font-size: 16px;
+  color: #666666;
+}
