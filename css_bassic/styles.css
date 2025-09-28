@@ -1,0 +1,38 @@
+/* styles.css - Flexbox layout */
+
+/* Step 1: Make body a flex container with vertical stacking */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* make body span full viewport height */
+  margin: 0;
+}
+
+/* Step 2: Main should also be flex but horizontal */
+main {
+  display: flex;
+  flex-direction: row;
+  flex: auto; /* let main grow and shrink as needed */
+}
+
+/* Step 3: Flex ratios for article and aside */
+article {
+  flex: 2; /* take up 2/3 width */
+  overflow-y: auto; /* scroll if content is long */
+  padding: 1rem;
+  background-color: #ffffff;
+}
+
+aside {
+  flex: 1; /* take up 1/3 width */
+  overflow-y: auto;
+  padding: 1rem;
+  background-color: #f0f0f0;
+}
+
+/* Step 4: Optional styling for header & footer */
+header, footer {
+  padding: 1rem;
+  background-color: #333;
+  color: #fff;
+}
